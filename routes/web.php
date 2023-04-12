@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return new JsonResponse(data: ['key' => 'main']);
+});
+
+Route::get('/test', function () {
+    return new JsonResponse(data: ['key' => 'test']);
 });
